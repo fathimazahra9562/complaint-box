@@ -8,29 +8,31 @@ pipeline {
             }
         }
 
+        stage('Python Setup') {
+            steps {
+                sh '''
+                    python3 -m venv .venv
+                    .venv/bin/python -m pip install --upgrade pip
+                    .venv/bin/pip install bandit safety
+                '''
+            }
+        }
+
         stage('Python Version') {
             steps {
                 sh 'python3 --version'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Bandit Security Scan') {
             steps {
-                sh 'python3 -m pip --version'
+                sh '.venv/bin/bandit -r project4 -f txt'
             }
         }
 
-        stage('Security Scan - Bandit') {
+        stage('Safety Security Scan') {
             steps {
-                sh 'python3 -m pip install bandit'
-                sh 'bandit -r project4 -f txt'
-            }
-        }
-
-        stage('Security Scan - Safety') {
-            steps {
-                sh 'python3 -m pip install safety'
-                sh 'safety scan'
+                sh '.venv/bin/safety scan'
             }
         }
     }
