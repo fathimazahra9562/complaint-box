@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
+    <title>Safety Check Report</title>
+</head>
+<body>
+<div class="container">
+
+    
+
+    <h1 class="text-center mb-3 mt-5">Safety Scan Report</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card my-2">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Scan Summary</h4>
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="card bg-secondary bg-opacity-25 text-black">
+                                <div class="card-body">
+                                    <p class="card-text">Packages Found (<a href="#scanned-packages">details &#8595;</a>)</p>
+                                    <h5 class="card-title fs-3">5</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-success  bg-opacity-25 text-black">
+                                <div class="card-body">
+                                    <p class="card-text">Vulnerabilities Reported (<a href="#vulnerabilities-found">details &#8595;</a>)</p>
+                                    <h5 class="card-title fs-3">0</h5>
+                                    
+                                        <p>Found vulnerabilities that were ignored: 1</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="mt-3 card bg-secondary bg-opacity-10">
+                        <div class="card-body fs-sm">
+                            <h5 class="mb-2">Meta-data</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="my-1"><span class="fw-bold">Time</span>: 2026-11-25 19:24:06.407174</p>
+                                    <p class="my-1"><span class="fw-bold">Safety version</span>: 3.8.1</p>
+                                    <p class="my-1">
+                                        
+                                            <span class="fw-bold">Token authentication using the Safety's proprietary vulnerability database</span>
+                                                                                
+                                    </p>
+                                    <p class="my-1">
+                                        <span class="fw-bold">Configuration file: </span>
+                                        
+                                            312a4516-78dc-468d-8c9d-38cc73b875e9 (source: Cloud)
+                                        
+                                    </p>
+                                    
+                                        <p class="my-1"><span class="fw-bold">Audit and monitor: </span>Enabled. Logging scan results to <a href="https://platform.safetycli.com">Safety Platform &#8594;</a></p>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="my-1"><span class="fw-bold">Scan ecosystems</span>:</p>
+                                        <ul>
+                                            
+                                            <li><span class="fw-bold">Python</span>: Python requirements files, Python poetry lock files, Python Pipfile lock files, Python environments, Python pyproject.toml files</li>
+                                            
+                                        </ul>
+                                    <p class="my-1"><span class="fw-bold">Scan paths</span>: <br/></p>
+                                        <ul>
+                                            
+                                            <li>/home/ubuntu/devsecops/project4/project4</li>
+                                            
+                                        </ul>
+                                    
+                                        <p class="my-1"><span class="fw-bold">Scan git context</span></p>
+                                        <p class="my-1"><span class="fw-bold"> &nbsp; origin: </span> https://github.com/sumith-k-sam/project4.git</p>
+                                        <p class="my-1"><span class="fw-bold"> &nbsp; branch: </span> main</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card mt-5">
+            <h2 class="mt-5 mb-3 px-4">Python environment: <small class="text-muted">/home/ubuntu/devsecops/project4/project4/venv/pyvenv.cfg</small></h2> 
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12" id="scanned-packages">
+                        <h4 class="mt-2 mb-3 px-2">Scanned Packages [ <a href="#scanned-packages">#</a> ]</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Package name</th>
+                                    <th>Found requirements</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        <tr>
+                                            <td>sqlparse</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                    <li>sqlparse==0.6.1</li>
+                                                    
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>asgiref</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                    <li>asgiref==3.13.0</li>
+                                                    
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>pip</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                    <li>pip==26.3</li>
+                                                    
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>django</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                    <li>django==5.2.19</li>
+                                                    
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>mysqlclient</td>
+                                            <td>
+                                                <ul>
+                                                    
+                                                    <li>mysqlclient==2.3.2</li>
+                                                    
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12" id="vulnerabilities-found">
+                        <h4 class="mt-2 mb-3 px-2">Vulnerabilities Reported [ <a href="#vulnerabilities-found">#</a> ]</h4>
+                        
+                            <p class="mx-2">
+                                No known security vulnerabilities were found.
+                                
+                            </p>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+
+            </div>
+        </div>
+
+
+    
+
+    
+
+    <div class="my-5 text-center text-secondary fst-italic">
+        <p>Safety Scanner and vulnerability data proudly maintained by <a href="https://safetycli.com" target="_blank">Safety Cybersecurity</a></p>
+    </div>
+
+    <div style="height:400px;">
+        &nbsp;
+    </div>
+
+</div>
+</body>
+</html>

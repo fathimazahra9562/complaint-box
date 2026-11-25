@@ -29,8 +29,8 @@ def studreg(request):
 def login(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
-    if email == 'admin@gmail.com' and password =='admin':
-        request.session['logintdetail'] = email
+    if email == settings.ADMIN_EMAIL and password == settings.ADMIN_PASSWORD:
+        request.session['logintdetail'] = email    
         request.session['admin'] = 'admin'
         return render(request, 'index.html')
 

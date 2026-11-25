@@ -1,0 +1,14 @@
+#python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Django generated files
+staticfiles/
