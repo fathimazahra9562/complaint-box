@@ -13,8 +13,14 @@ pipeline {
                 sh '''
                     python3 -m venv .venv
                     .venv/bin/python -m pip install --upgrade pip
-                    .venv/bin/pip install bandit safety
+                    .venv/bin/pip install bandit pip-audit
                 '''
+            }
+        }
+
+        stage('Install Project Dependencies') {
+            steps {
+                sh '.venv/bin/pip install -r requirements.txt'
             }
         }
 
@@ -30,9 +36,9 @@ pipeline {
             }
         }
 
-        stage('Safety Security Scan') {
+        stage('Dependency Security Scan') {
             steps {
-                sh '.venv/bin/safety scan'
+                sh '.venv/bin/pip-audit -r requirements.txt'
             }
         }
     }
