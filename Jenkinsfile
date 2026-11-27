@@ -45,9 +45,10 @@ pipeline {
         stage('Django Quality Checks') {
             steps {
                 withCredentials([
-                    string(
+                    usernamePassword(
                         credentialsId: 'complaint-db-password',
-                        variable: 'DB_PASSWORD'
+                        usernameVariable: 'DB_USERNAME',
+                        passwordVariable: 'DB_PASSWORD'
                     )
                 ]) {
                     sh '''
