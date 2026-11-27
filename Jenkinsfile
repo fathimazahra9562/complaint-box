@@ -41,6 +41,23 @@ pipeline {
                 sh '.venv/bin/pip-audit -r requirements.txt'
             }
         }
+
+        stage('Django Quality Checks') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'complaint-db-password',
+                        variable: 'DB_PASSWORD'
+                    )
+                ]) {
+                    sh '''
+                        .venv/bin/python project4/manage.py check
+                        .venv/bin/python project4/manage.py makemigrations --check --dry-run
+                        .venv/bin/python project4/manage.py test project4
+                    '''
+                }
+            }
+        }
     }
 
     post {
