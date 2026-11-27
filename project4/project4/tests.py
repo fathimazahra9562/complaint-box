@@ -1,3 +1,4 @@
+import uuid
 from django.test import TestCase
 from .models import (
     complaintboxregister,
@@ -16,7 +17,7 @@ class ComplaintBoxModelTests(TestCase):
             phone="9876543210",
             email="student@example.com",
             image="test.jpg",
-            password="testpassword"
+            password=str(uuid.uuid4())
         )
         self.assertEqual(student.name, "Test Student")
 
@@ -25,7 +26,7 @@ class ComplaintBoxModelTests(TestCase):
             designation="Professor",
             name="Test Faculty",
             email="faculty@example.com",
-            password="testpassword"
+            password=str(uuid.uuid4())
         )
         self.assertEqual(faculty.name, "Test Faculty")
 

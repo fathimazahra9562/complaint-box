@@ -32,7 +32,7 @@ pipeline {
 
         stage('Bandit Security Scan') {
             steps {
-                sh '.venv/bin/bandit -r project4 -f txt'
+                sh '.venv/bin/bandit -r project4 -x project4/venv,.venv -f txt'
             }
         }
 
